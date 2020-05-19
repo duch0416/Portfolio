@@ -13,7 +13,19 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+        resolve: `gatsby-plugin-prefetch-google-fonts`,
+        options: {
+          fonts: [
+            {
+              family: `VT323`,
+              variants: [`400`]
+            },
+          ],
+        },
+    },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
