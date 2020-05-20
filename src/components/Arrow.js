@@ -18,6 +18,11 @@ const ArrowImg = styled.img`
     bottom: 15%;
     right: 50%;
     transform: translateX(50%);
+    transition: 0.2s ease;
+    &:hover{
+        transform: translateX(50%) scale(1.2);
+        cursor: pointer;
+    }
 `
 
 const Arrow = () => {
