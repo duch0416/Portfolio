@@ -6,6 +6,7 @@ import Image from "gatsby-image"
 
 import Title from "../components/Title"
 import BurgerMenu from "../components/BurgerMenu"
+import Arrow from "../components/Arrow"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -25,13 +26,15 @@ const Hero = styled(Image)`
   object-fit: cover;
 `
 
+
 const IndexPage = ({ data }) => (
   <>
     <GlobalStyle />
     <Wrapper src={data.file.childImageSharp.fluid.src}>
       <Hero fluid={data.file.childImageSharp.fluid} />
       <BurgerMenu/>
-      <Title></Title>
+      <Title/>
+      <Arrow/>
     </Wrapper>
   </>
 )
