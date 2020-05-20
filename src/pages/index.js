@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import Title from "../components/Title"
+import BurgerMenu from "../components/BurgerMenu"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -18,18 +19,18 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `
-const Img = styled(Image)`
+const Hero = styled(Image)`
   width: 100%;
   height: 100vh;
   object-fit: cover;
 `
 
 const IndexPage = ({ data }) => (
-  
   <>
     <GlobalStyle />
     <Wrapper src={data.file.childImageSharp.fluid.src}>
-      <Img fluid={data.file.childImageSharp.fluid} />
+      <Hero fluid={data.file.childImageSharp.fluid} />
+      <BurgerMenu/>
       <Title></Title>
     </Wrapper>
   </>
