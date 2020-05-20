@@ -1,7 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-
 import { createGlobalStyle } from "styled-components"
+import { graphql } from "gatsby"
+import Image from "gatsby-image"
+
+import Title from "../components/Title"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -11,17 +14,38 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 const Wrapper = styled.div`
-  width: 100px;
-  height: 100px;
-  font-size: 40px;
-  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const Img = styled(Image)`
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 `
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
+  
   <>
     <GlobalStyle />
-    <Wrapper>DSA  sdas </Wrapper>
+    <Wrapper src={data.file.childImageSharp.fluid.src}>
+      <Img fluid={data.file.childImageSharp.fluid} />
+      <Title></Title>
+    </Wrapper>
   </>
 )
+
+export const query = graphql`
+  {
+    __typename
+    file(name: { eq: "jl" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
