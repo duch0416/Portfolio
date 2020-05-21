@@ -20,7 +20,7 @@ const Hero = styled(Image)`
 `
 const query = graphql`{
     __typename
-    file(name: { eq: "jll" }) {
+    file(name: { eq: "jl" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_tracedSVG
