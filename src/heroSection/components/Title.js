@@ -11,6 +11,7 @@ const Name = styled.h1`
     color: #0AC8FA;
     font-size: 36px;
     text-align: center;
+    letter-spacing: 2px;
 `
 const JobTitle = styled.h2`
     color: #0AC8FA;
